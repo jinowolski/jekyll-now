@@ -1,6 +1,8 @@
 ---
 layout: post
-title: le Hello World!
+title: le Hello World! 
+categories: 
+    - welcome
 ---
 
 Some content will appear here soon.

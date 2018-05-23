@@ -6,6 +6,10 @@
 name: jinowolski.github.io
 title: jinowolski.github.io
 
+email: jinowolski@gmail.com
+
+author: Jan Inowolski
+
 # Short bio or description (displayed in the header)
 description: My misc content
 
@@ -18,31 +22,24 @@ avatar: https://raw.githubusercontent.com/jinowolski/jinowolski.github.io/master
 
 # Includes an icon in the footer for each username you enter
 footer-links:
-  dribbble:
-  email:
+  email: jinowolski@gmail.com
   facebook: jan.inowolski
-  flickr:
   github: jinowolski
   instagram: jinowolski_
   linkedin:
   pinterest:
-  rss: # just type anything here for a working RSS icon
   twitter: jinowolski
   stackoverflow: users/532515/jinowolski # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
   googleplus: # anything in your profile username that comes after plus.google.com/
 
 
-# Enter your Disqus shortname (not your username) to enable commenting on posts
-# You can find your shortname on the Settings page of your Disqus account
-disqus:
-
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics:
 
 # Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
 # Used for Sitemap.xml and your RSS feed
-url:
+url: "https://jinowolski.github.io"
 
 # If you're hosting your site at a Project repository on GitHub pages
 # (http://yourusername.github.io/repository-name)
@@ -71,7 +68,7 @@ kramdown:
 
 # Set the Sass partials directory, as we're using @imports
 sass:
-  style: :expanded # You might prefer to minify using :compressed
+  style: :compressed # :expanded / :compressed
 
 # Use the following plug-ins
 plugins:
@@ -85,3 +82,4 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+  - "*.sh"
