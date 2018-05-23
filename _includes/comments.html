@@ -1,0 +1,46 @@
+<h2>Comments</h2>
+{% if site.data.comments[page.slug] %}
+<div class="comments">
+{% assign comments = site.data.comments[page.slug] | sort %}
+{% for comment in comments %}
+    {% assign avatar = comment[1].avatar %}
+    {% assign email = comment[1].email %}
+    {% assign name = comment[1].name %}
+    {% assign date = comment[1].date %}
+    {% assign message = comment[1].message %}
+{% include comment.html index=forloop.index avatar=avatar email=email name=name date=date message=message %}
+{% endfor %}
+</div>
+{% else %}
+<em>Be first to comment!</em>
+{% endif %}
+<h3>Your comment</h3>
+<form id="comment-form" method="post" action="https://api.staticman.net/v2/entry/jinowolski/jinowolski.github.io/comments">
+  <fieldset>
+    <label for="comment-form-message">Comment</label>
+    <textarea type="text" rows="3" id="comment-form-message" name="fields[message]" tabindex="1"></textarea>
+  </fieldset>
+  <fieldset>
+    <label for="comment-form-name">Name</label>
+    <input type="text" id="comment-form-name" name="fields[name]" tabindex="2" />
+  </fieldset>
+  <fieldset>
+    <label for="comment-form-email">Email address</label>
+    <input type="email" id="comment-form-email" name="fields[email]" tabindex="3" />
+  </fieldset>
+  <fieldset class="hidden" style="display:none;">
+    <!-- used by Staticman to generate filenames for each comment -->
+    <input type="hidden" name="options[slug]" value="{{ page.slug }}">
+    <input type="hidden" name="options[redirect]" value="http://localhost:4000/{{ page.slug }}">
+    <input type="hidden" name="options[reCaptcha][siteKey]" value="6Ld18VoUAAAAACsdeNiZVvHaYV8ll7QDMsc__1BY">
+    <input type="hidden" name="options[reCaptcha][secret]" value="RrADn0ChgiBqB7Ssd/q0LN+w+FyJb69PYlPSSyXhfhQ2XmhYzYF2N1iU3gqziAQh1x6ZLxlVUSF2Bf08vW34jXN3u7RteELx/ws9As1hVRAsa0zqeC6kAWV4S1HSUhOxJCjfoOdh44KWGHzVtP/ln3ZfBsAgGLrvaZOGf3TcCT8=">
+    <!-- honey pot field used to filter out spam -->
+    <label for="comment-form-location">Not used. Leave blank if you are a human.</label>
+    <input type="text" id="comment-form-location" name="fields[hidden]" autocomplete="off"/>
+  </fieldset>
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+  <div class="g-recaptcha" data-sitekey="6Ld18VoUAAAAACsdeNiZVvHaYV8ll7QDMsc__1BY"></div>
+  <fieldset>
+    <button type="submit" id="comment-form-submit" tabindex="5">Submit Comment</button>
+  </fieldset>
+</form>

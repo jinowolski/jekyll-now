@@ -1,0 +1,20 @@
+allowedFields          : ['name', 'email', 'message']
+branch                 : "comments"
+commitMessage          : "New comment."
+filename               : comment-{@timestamp}
+format                 : "yml"
+moderation             : false
+path                   : "_data/comments/{options.slug}"
+requiredFields         : ['name', 'email', 'message']
+transforms:
+  email                : "md5"
+generatedFields:
+  date:
+    type               : "date"
+    options:
+      format           : "iso8601"
+name                   : "jinowolski.github.io"
+reCaptcha:
+  enabled              : true
+  siteKey              : "6Ld18VoUAAAAACsdeNiZVvHaYV8ll7QDMsc__1BY"
+  secret               : "RrADn0ChgiBqB7Ssd/q0LN+w+FyJb69PYlPSSyXhfhQ2XmhYzYF2N1iU3gqziAQh1x6ZLxlVUSF2Bf08vW34jXN3u7RteELx/ws9As1hVRAsa0zqeC6kAWV4S1HSUhOxJCjfoOdh44KWGHzVtP/ln3ZfBsAgGLrvaZOGf3TcCT8="
